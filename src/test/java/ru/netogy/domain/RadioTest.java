@@ -6,12 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
-    @Test
-    public void shouldSetNameStation() {
-        Radio radio = new Radio();
-        radio.setNameStation("Номер станции");
-        assertEquals("Номер станции", radio.getNameStation());
-    }
+
 
     @Test
     public void shouldSetRadioStation() {
@@ -40,14 +35,14 @@ class RadioTest {
     public void shouldSetNextStation() {
         Radio radio = new Radio();
         radio.setNextStation(9);
-        assertEquals(4, radio.getNextStation());
+        assertEquals(0, radio.getNextStation());
     }
 
     @Test
     public void shouldSetPrevStation() {
         Radio radio = new Radio();
         radio.setPrevStation(6);
-        assertEquals(4, radio.getPrevStation());
+        assertEquals(5, radio.getPrevStation());
     }
 
 

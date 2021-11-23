@@ -1,7 +1,7 @@
 package ru.netogy.domain;
 
 public class Radio {
-    
+
     private int radioStation;
     private int nextStation;
     private int prevStation;
