@@ -124,8 +124,8 @@ class RadioTest {
     @Test
     public void shouldSetPrevStationInRange() {
         Radio radio = new Radio();
-        radio.setPrevStation(1);
-        assertEquals(0, radio.getPrevStation());
+        radio.setPrevStation(5);
+        assertEquals(4, radio.getPrevStation());
     }
 
     @Test
@@ -143,11 +143,16 @@ class RadioTest {
     }
 
     @Test
-    public void shouldSetPrevStationOnBorder() {
+    public void shouldSetPrevStationOnBorderBottom() {
         Radio radio = new Radio();
         radio.setPrevStation(0);
         assertEquals(9, radio.getPrevStation());
     }
-
+    @Test
+    public void shouldSetPrevStationOnBorderUp() {
+        Radio radio = new Radio();
+        radio.setPrevStation(9);
+        assertEquals(8, radio.getPrevStation());
+    }
 
 }

@@ -72,10 +72,7 @@ public class Radio {
         if (nextStation == 9) {
             nextStation = -1;
         }
-        if (nextStation < 9) {
             nextStation++;
-        }
-
         this.nextStation = nextStation;
     }
 
@@ -93,9 +90,7 @@ public class Radio {
         if (prevStation == 0) {
             prevStation = 10;
         }
-        if ( prevStation > 0) {
             prevStation--;
-        }
         this.prevStation = prevStation;
     }
 
