@@ -9,12 +9,37 @@ class RadioTest {
 
 
     @Test
-    public void shouldSetRadioStation() {
+    public void shouldSetRadioStationInRangeUp() {
+        Radio radio = new Radio();
+        radio.setRadioStation( 9 );
+        assertEquals(9, radio.getRadioStation());
+    }
+    @Test
+    public void shouldSetRadioStationInRangeBottom() {
         Radio radio = new Radio();
         radio.setRadioStation( 0 );
         assertEquals(0, radio.getRadioStation());
     }
 
+    @Test
+    public void shouldSetRadioStationInRangeMiddle() {
+        Radio radio = new Radio();
+        radio.setRadioStation( 5 );
+        assertEquals(5, radio.getRadioStation());
+    }
+
+    @Test
+    public void shouldSetRadioStationOutRangeBottom() {
+        Radio radio = new Radio();
+        radio.setRadioStation( -1 );
+        assertEquals(0, radio.getRadioStation());
+    }
+    @Test
+    public void shouldSetRadioStationOutRangeUp() {
+        Radio radio = new Radio();
+        radio.setRadioStation( 10 );
+        assertEquals(0, radio.getRadioStation());
+    }
 
     @Test
     public void shouldSetIncreaseVolume(){
