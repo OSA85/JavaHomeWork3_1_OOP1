@@ -88,12 +88,12 @@ public class Radio {
             return;
         }
         if (prevStation > 9) {
-            return;
+                return;
         }
         if (prevStation == 0) {
             prevStation = 10;
         }
-        if (prevStation > 0) {
+        if ( prevStation > 0) {
             prevStation--;
         }
         this.prevStation = prevStation;
