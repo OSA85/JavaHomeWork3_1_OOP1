@@ -26,9 +26,9 @@ class RadioTest {
     @Test
     public void shouldIncreaseCurrentVolumeOutRangeUp() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         radio.increaseVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
 
     }
 
@@ -44,9 +44,9 @@ class RadioTest {
     @Test
     public void shouldDecreaseCurrentVolumeOutRangeUp() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         radio.decreaseVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
 
     }
 
