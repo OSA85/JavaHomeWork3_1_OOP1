@@ -3,7 +3,6 @@ package ru.netogy.domain;
 public class Radio {
 
 
-
     private int amountRadioStation = 9;
     private int radioStation;
     private int currentVolume;

@@ -175,4 +175,10 @@ class RadioTest {
         assertEquals(0, radio.getRadioStation());
     }
 
+    @Test
+    public void shouldSetMaxAmountRadioStation() {
+    Radio radio = new Radio(50);
+    radio.setRadioStation(50);
+    assertEquals ( 50, radio.getRadioStation());
+}
 }
