@@ -80,17 +80,17 @@ class RadioTest {
     @Test
     public void shouldNextStationInRangeStandard() {
         Radio radio = new Radio();
-        radio.setRadioStation(5);
-        radio.nextStation();
-        assertEquals(6, radio.getRadioStation());
+        radio.setRadioStation(2);
+        radio.numberNextStation();
+        assertEquals(2, radio.getRadioStation());
 
     }
 
     @Test
     public void shouldNextStationInRangeBottom() {
         Radio radio = new Radio();
-        radio.setRadioStation(0);
-        radio.nextStation();
+        radio.setRadioStation(1);
+        radio.numberNextStation();
         assertEquals(1, radio.getRadioStation());
 
     }
@@ -99,8 +99,8 @@ class RadioTest {
     public void shouldNextStationInStandardRangeUp() {
         Radio radio = new Radio();
         radio.setRadioStation(9);
-        radio.nextStation();
-        assertEquals(0, radio.getRadioStation());
+        radio.numberNextStation();
+        assertEquals(1, radio.getRadioStation());
 
     }
 
@@ -109,14 +109,14 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setRadioStation(5);
         radio.prevStation();
-        assertEquals(4, radio.getRadioStation());
+        assertEquals(3, radio.getRadioStation());
 
     }
 
     @Test
     public void shouldPrevStationInStandardRangeBottom() {
         Radio radio = new Radio();
-        radio.setRadioStation(0);
+        radio.setRadioStation(1);
         radio.prevStation();
         assertEquals(9, radio.getRadioStation());
 
@@ -127,7 +127,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setRadioStation(9);
         radio.prevStation();
-        assertEquals(8, radio.getRadioStation());
+        assertEquals(7, radio.getRadioStation());
 
     }
 
@@ -135,7 +135,7 @@ class RadioTest {
     public void shouldSetRadioStationInStandardRange() {
         Radio radio = new Radio();
         radio.setRadioStation(5);
-        assertEquals(5, radio.getRadioStation());
+        assertEquals(4, radio.getRadioStation());
     }
 
     @Test
@@ -150,7 +150,7 @@ class RadioTest {
     @Test
     public void shouldSetRadioStationInStandardRangeBottom() {
         Radio radio = new Radio();
-        radio.setRadioStation(0);
+        radio.setRadioStation(1);
         assertEquals(0, radio.getRadioStation());
     }
 
@@ -158,7 +158,7 @@ class RadioTest {
     public void shouldSetRadioStationInStandardRangeUp() {
         Radio radio = new Radio();
         radio.setRadioStation(9);
-        assertEquals(9, radio.getRadioStation());
+        assertEquals(8, radio.getRadioStation());
     }
 
     @Test
@@ -178,12 +178,18 @@ class RadioTest {
     public void shouldSetRadioStationInRange() {
         Radio radio = new Radio(49);
         radio.setRadioStation(25);
-        assertEquals ( 26, radio.getRadioStation());
+        assertEquals ( 24, radio.getRadioStation());
     }
     @Test
-    public void shouldSetMaxAmountRadioStation() {
+    public void shouldSetMaxRadioStation() {
     Radio radio = new Radio(49);
     radio.setRadioStation(49);
-    assertEquals ( 50, radio.getRadioStation());
+    assertEquals ( 48, radio.getRadioStation());
 }
+    @Test
+    public void shouldSetFirstRadioStation() {
+        Radio radio = new Radio(49);
+        radio.setRadioStation(1);
+        assertEquals ( 0, radio.getRadioStation());
+    }
 }

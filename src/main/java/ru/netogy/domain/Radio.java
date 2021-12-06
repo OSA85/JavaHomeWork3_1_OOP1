@@ -51,12 +51,12 @@ public class Radio {
     }
 
 
-    public void nextStation() {
+    public void numberNextStation() {
 //        if (radioStation < 10) {
         radioStation = radioStation + 1;
 //        }
-        if (radioStation == amountRadioStation + 1) {
-            radioStation = 0;
+        if (radioStation == amountRadioStation) {
+            radioStation = 1;
         }
 
     }
@@ -75,13 +75,13 @@ public class Radio {
     }
 
     public void setRadioStation(int radioStation) {
-        if (radioStation < 0) {
+        if (radioStation < 1) {
             return;
         }
         if (radioStation > amountRadioStation) {
             return;
         }
-        this.radioStation = radioStation + 1;
+        this.radioStation = radioStation - 1;
 
     }
 
