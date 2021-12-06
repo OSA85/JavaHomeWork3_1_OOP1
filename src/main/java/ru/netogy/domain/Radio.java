@@ -81,7 +81,7 @@ public class Radio {
         if (radioStation > amountRadioStation) {
             return;
         }
-        this.radioStation = radioStation;
+        this.radioStation = radioStation + 1;
 
     }
 

@@ -174,11 +174,16 @@ class RadioTest {
         radio.setRadioStation(-1);
         assertEquals(0, radio.getRadioStation());
     }
-
+    @Test
+    public void shouldSetRadioStationInRange() {
+        Radio radio = new Radio(49);
+        radio.setRadioStation(25);
+        assertEquals ( 26, radio.getRadioStation());
+    }
     @Test
     public void shouldSetMaxAmountRadioStation() {
-    Radio radio = new Radio(50);
-    radio.setRadioStation(50);
+    Radio radio = new Radio(49);
+    radio.setRadioStation(49);
     assertEquals ( 50, radio.getRadioStation());
 }
 }
