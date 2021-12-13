@@ -14,6 +14,7 @@ class RadioTest {
         assertEquals(51, radio.getCurrentVolume());
 
     }
+
     @Test
     public void shouldIncreaseCurrentVolumeOutRangeBottom() {
         Radio radio = new Radio();
@@ -174,22 +175,64 @@ class RadioTest {
         radio.setRadioStation(-1);
         assertEquals(0, radio.getRadioStation());
     }
+
     @Test
     public void shouldSetRadioStationInRange() {
         Radio radio = new Radio(49);
         radio.setRadioStation(25);
-        assertEquals ( 24, radio.getRadioStation());
+        assertEquals(24, radio.getRadioStation());
     }
+
     @Test
     public void shouldSetMaxRadioStation() {
-    Radio radio = new Radio(49);
-    radio.setRadioStation(49);
-    assertEquals ( 48, radio.getRadioStation());
-}
+        Radio radio = new Radio(49);
+        radio.setRadioStation(49);
+        assertEquals(48, radio.getRadioStation());
+    }
+
     @Test
     public void shouldSetFirstRadioStation() {
         Radio radio = new Radio(49);
         radio.setRadioStation(1);
-        assertEquals ( 0, radio.getRadioStation());
+        assertEquals(0, radio.getRadioStation());
     }
+
+    @Test
+    public void shouldSetRadioStation() {
+        Radio radio = new Radio(20);
+        radio.setRadioStation(20);
+        assertEquals(19, radio.getRadioStation());
+    }
+
+    @Test
+    public void shouldSetRadioStation1() {
+        Radio radio = new Radio(20);
+        radio.setRadioStation(1);
+        assertEquals(0, radio.getRadioStation());
+    }
+
+    //    Я делал что при установке нулевой станции она с номером 1,
+//    а при установке максимальной станции она с в ячейке меньшей на еденицу,
+//    т.о. что в ячейке [0] станция с номером 1, а допустим в ячейке [19] станция с номером 20.
+//    поэтому станция и устанавливается 20, но она в ячейке [19].
+//    Поэтому и ожидаемый результат номер ячейки, а устанавливаем мы станцию.
+//    Обычно же не бывает станции ноль, а начинаем считать с 1, или я может что-то от себя лишнего добавил?
+//    Я думал мне это и надо было сделать.
+
+    @Test
+    public void shouldSetRadioStation2() {
+        Radio radio = new Radio();
+        radio.setAmountRadioStation(20);
+        radio.setRadioStation(20);
+        assertEquals(19, radio.getRadioStation());
+    }
+
+    @Test
+    public void shouldSetRadioStation3() {
+        Radio radio = new Radio();
+        radio.setAmountRadioStation(20);
+        radio.setRadioStation(2);
+        assertEquals(1, radio.getRadioStation());
+    }
+
 }
